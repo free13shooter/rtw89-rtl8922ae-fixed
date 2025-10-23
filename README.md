@@ -1,7 +1,7 @@
 
 
 rtw89
-=====================================================================================================================================
+==================================================================================
 [FS rvscode]
 
 🇷🇺 Описание
@@ -14,7 +14,20 @@ Wi-Fi driver for Realtek RTL8922AE, tested on Debian 12 with kernel 6.12.43. Bas
 
 Requires firmware rtw8922a_fw.bin. Module loads successfully, networks visible in Plasma GUI.
 
-=====================================================================================================================================
+
+Проверь наличие firmware:
+
+ls /lib/firmware/rtw89/
+
+→ должен быть файл rtw8922a_fw.bin или rtw89_*.bin
+
+Если нет — скачай вручную:
+
+sudo mkdir -p /lib/firmware/rtw89
+cd /lib/firmware/rtw89
+sudo wget https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/plain/rtw89/rtw8922a_fw.bin
+
+==================================================================================
 ### A repo for the newest Realtek rtw89 codes.
 
 This repo now contains the code for the Realtek RTW8922AE,  which
