@@ -66,6 +66,7 @@ static int rtw89_ops_start(struct ieee80211_hw *hw)
 	return ret;
 }
 
+/*
 static void rtw89_ops_stop(struct ieee80211_hw *hw)
 {
 	struct rtw89_dev *rtwdev = hw->priv;
@@ -73,6 +74,17 @@ static void rtw89_ops_stop(struct ieee80211_hw *hw)
 	mutex_lock(&rtwdev->mutex);
 	rtw89_core_stop(rtwdev);
 	mutex_unlock(&rtwdev->mutex);
+}*/
+
+static void rtw89_ops_stop(struct ieee80211_hw *hw, bool shutdown)
+{
+    struct rtw89_dev *rtwdev = hw->priv;
+
+    (void)shutdown; // игнорируем, если не нужен
+
+    mutex_lock(&rtwdev->mutex);
+    rtw89_core_stop(rtwdev);
+    mutex_unlock(&rtwdev->mutex);
 }
 
 static int rtw89_ops_config(struct ieee80211_hw *hw, u32 changed)
