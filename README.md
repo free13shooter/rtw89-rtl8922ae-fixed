@@ -1,5 +1,20 @@
+
+
 rtw89
-===========
+=====================================================================================================================================
+[FS rvscode]
+
+🇷🇺 Описание
+Драйвер Wi-Fi для Realtek RTL8922AE, протестирован на Debian 12 с ядром 6.12.43. Исходный код взят из lwfinger/rtw89, внесена правка для совместимости с ядром 6.12: в mac80211.c изменена сигнатура rtw89_ops_stop, чтобы соответствовать новому API.
+
+Поддержка прошивки rtw8922a_fw.bin обязательна. Модуль успешно загружается, сети отображаются в GUI Plasma.
+
+🇬🇧 Description
+Wi-Fi driver for Realtek RTL8922AE, tested on Debian 12 with kernel 6.12.43. Based on lwfinger/rtw89, patched for kernel 6.12 compatibility: function rtw89_ops_stop in mac80211.c updated to match new API.
+
+Requires firmware rtw8922a_fw.bin. Module loads successfully, networks visible in Plasma GUI.
+
+=====================================================================================================================================
 ### A repo for the newest Realtek rtw89 codes.
 
 This repo now contains the code for the Realtek RTW8922AE,  which
